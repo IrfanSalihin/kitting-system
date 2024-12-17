@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for Kitting System</title>
+</head>
+<body>
+    <h1>Register for Kitting System</h1>
+    <form id="registerForm">
+        <label for="username">Username: </label>
+        <input type="text" id="registerUsername" name="username" required><br><br>
+        
+        <label for="password">Password: </label>
+        <input type="password" id="registerPassword" name="password" required><br><br>
+
+        <label for="role">Role: </label>
+        <select id="role" name="role" required>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+        </select><br><br>
+        
+        <button type="submit">Register</button>
+    </form>
+
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('registerUsername').value;
+            const password = document.getElementById('registerPassword').value;
+            const role = document.getElementById('role').value;
+
+            const response = await fetch('/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password, role }),
+            });
+
+            const data = await response.text();
+            if (response.ok) {
+                alert('Registration successful!');
+                window.location.href = 'login.html';  // Redirect to login page
+            } else {
+                alert('Registration failed: ' + data);
+            }
+        });
+    </script>
+</body>
+</html>
