@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Kitting Record</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <h1>Add Kitting Record</h1>
+
+    <form action="/add-kitting-record" method="POST">
+      <div>
+        <label for="customer">Customer:</label>
+        <input type="text" id="customer" name="customer" required />
+      </div>
+
+      <div>
+        <label for="pick_list_number">Pick List Number:</label>
+        <input
+          type="text"
+          id="pick_list_number"
+          name="pick_list_number"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="instrument_names">Instrument Name:</label>
+        <select id="instrument_names" name="instrument_names" required>
+          <option value="Maestro 2">Maestro 2</option>
+          <option value="Triton">Triton</option>
+          <option value="MYAH">MYAH</option>
+          <option value="NW500">NW500</option>
+          <option value="Aladdin">Aladdin</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="requested_date">Requested Date:</label>
+        <input type="date" id="requested_date" name="requested_date" required />
+      </div>
+
+      <div>
+        <label for="arrival_date">Arrival Date:</label>
+        <input type="date" id="arrival_date" name="arrival_date" />
+      </div>
+
+      <div>
+        <label for="completion_date">Completion Date:</label>
+        <input type="date" id="completion_date" name="completion_date" />
+      </div>
+
+      <div>
+        <label for="user">User:</label>
+        <select id="user" name="user" required>
+          <option value="Afizul">Afizul</option>
+          <option value="Laura">Laura</option>
+          <option value="Izzul">Izzul</option>
+          <option value="Shen Wen">Shen Wen</option>
+          <option value="Lee Yian">Lee Yian</option>
+          <option value="Syafiq">Syafiq</option>
+          <option value="Irfan">Irfan</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="serial_numbers">Serial Numbers:</label>
+        <input type="text" id="serial_numbers" name="serial_numbers" required />
+      </div>
+
+      <div>
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+          <option value="Pending">Pending</option>
+          <option value="Completed">Completed</option>
+          <option value="Faulty">Faulty</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="purpose">Purpose:</label>
+        <select id="purpose" name="purpose">
+          <option value="Loan">Loan</option>
+          <option value="Sale">Sale</option>
+          <option value="Demo">Demo</option>
+          <option value="Exhibition">Exhibition</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="remarks">Remarks:</label>
+        <textarea id="remarks" name="remarks"></textarea>
+      </div>
+
+      <div>
+        <label for="task_type">Task Type:</label>
+        <select id="task_type" name="task_type" required>
+          <option value="Assembly">Assembly</option>
+          <option value="Disassembly">Disassembly</option>
+          <option value="Maintenance">Maintenance</option>
+          <option value="Calibration">Calibration</option>
+        </select>
+      </div>
+
+      <button type="submit">Add Record</button>
+    </form>
+
+    <a href="/home">Back to Home</a>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!-- user-home.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Home</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <h1>User - Kitting Records</h1>
+
+    <!-- Add Kitting Record button -->
+    <a href="/add-kitting-record">
+      <button>Add Kitting Record</button>
+    </a>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Customer</th>
+          <th>Pick List Number</th>
+          <th>Instrument Names</th>
+          <th>Task Type</th>
+          <th>Requested Date</th>
+          <th>Arrival Date</th>
+          <th>Completion Date</th>
+          <th>User</th>
+          <th>Serial Numbers</th>
+          <th>Status</th>
+          <th>Purpose</th>
+          <th>Remarks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% records.forEach(record => { %>
+        <tr>
+          <td><%= record.id %></td>
+          <td><%= record.customer %></td>
+          <td><%= record.pick_list_number %></td>
+          <td><%= record.instrument_names %></td>
+          <td><%= record.task_type %></td>
+          <td><%= record.requested_date %></td>
+          <td><%= record.arrival_date %></td>
+          <td><%= record.completion_date %></td>
+          <td><%= record.user %></td>
+          <td><%= record.serial_numbers %></td>
+          <td><%= record.status %></td>
+          <td><%= record.purpose %></td>
+          <td><%= record.remarks %></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <a href="/logout">Logout</a>
+  </body>
+</html>
